@@ -1,5 +1,35 @@
 {% extends 'main/base.html' %}
 
+{% block title %}Menu{% endblock %}
+
+{% block page_class %}menu{% endblock %}
+
+{% block heading_class %}page_heading{% endblock %}
+{% block heading %}Menu{% endblock %}
+
 {% block content %}
-    <p>Menu...</p>
+    <ul>
+        {% for type in types %}
+            <li class="menu_card">
+                <h2>{{ type.1 }}</h2>
+                <dl>
+                    {% for row in object_list %}
+                        {% if row.type == type.0 %}
+                            <div class="menu_card_item">
+                                <dt>
+                                    {% if not row.is_available %}
+                                        <del>{{ row.name }}</del>
+                                    {% else %}
+                                        <a href="#">{{ row.name }}</a>
+                                    {% endif %}
+                                </dt>
+                                <dd>{{ row.description }}</dd>
+                                <dd>{{ row.price }}</dd>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </dl>
+            </li>
+        {% endfor %}
+    </ul>
 {% endblock %}
