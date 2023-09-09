@@ -14,13 +14,26 @@
 
 /* General Styles */
 
-ul {
+html, body, .page_wrap {
+    height: 100%;
+}
+
+html, body, ul, .page_wrap {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: 'Quesha', sans-serif;
+}
+
 li {
     font-size: 1.6rem;
+}
+
+.page_wrap {
+    display: grid;
+    grid-template-rows: 1fr auto;
 }
 
 .page_content {
@@ -92,6 +105,29 @@ nav a:active {
     text-align: center;
 }
 
+/* Page Styles */
+
+.home {
+    height: 100vh;
+    position: relative;
+}
+
+.home:before {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0.7;
+}
+
+.home:before {
+    background: url("../images/rest_interior.jpg");
+    background-size: cover;
+}
+
 /* Footer */
 
 .icon_credit {
@@ -139,5 +175,9 @@ nav a:active {
 
     .icon_credit a:link, .icon_credit a:visited {
         color: var(--textDark);
+    }
+
+    .home:before {
+        background: url("../images/mobile_bg1.jpg") center no-repeat;
     }
 }
