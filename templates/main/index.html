@@ -8,5 +8,9 @@
 {% block heading %}Best Restaurant{% endblock %}
 
 {% block content %}
-    <p>Home Page...</p>
+    <ul class="home_menu">
+        <li><a href="{% url 'main_site:menu' %}">View Menu</a></li>
+        <li><a href="{% url 'main_site:contact' %}">Find Location</a></li>
+        <li><a href="{% url 'main_site:reserve' %}">Book Your Visit</a></li>
+    </ul>
 {% endblock %}
