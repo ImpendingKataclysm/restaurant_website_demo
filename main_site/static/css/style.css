@@ -23,6 +23,10 @@ li {
     font-size: 1.6rem;
 }
 
+.page_content {
+    position: relative;
+}
+
 .main_wrap {
     width: 80%;
     margin: 0 auto;
@@ -88,6 +92,12 @@ nav a:active {
     text-align: center;
 }
 
+/* Footer */
+
+.icon_credit {
+    display: none;
+}
+
 /* Smaller Screens */
 
 @media screen and (max-width: 760px) {
@@ -116,5 +126,18 @@ nav a:active {
 
     .main_heading {
         font-size: 2.1rem;
+    }
+
+    .icon_credit {
+        display: block;
+        color: var(--textDark);
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .icon_credit a:link, .icon_credit a:visited {
+        color: var(--textDark);
     }
 }
