@@ -8,6 +8,21 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
 <body>
+
+    <div id="nav_btn" class="nav_btn" tabindex="0">
+        <img class="nav_icon" src="{% static 'images/nav_icon.png' %}" alt="nav menu icon" />
+    </div>
+
+    <nav id="site_nav">
+        <ul>
+            <li><a href="{% url 'main_site:home' %}">Home</a></li>
+            <li><a href="{% url 'main_site:about' %}">About</a></li>
+            <li><a href="{% url 'main_site:menu' %}">Menu</a></li>
+            <li><a href="{% url 'main_site:contact' %}">Locations</a></li>
+            <li><a href="{% url 'main_site:reserve' %}">Reservations</a></li>
+        </ul>
+    </nav>
+
     <main>
         <div class="main_wrap">
             <header class="{% block heading_class %}{% endblock %}">
@@ -17,5 +32,7 @@
             {% block content %}{% endblock %}
         </div>
     </main>
+
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

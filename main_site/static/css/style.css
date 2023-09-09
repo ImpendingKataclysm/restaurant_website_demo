@@ -14,9 +14,63 @@
 
 /* General Styles */
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    font-size: 1.6rem;
+}
+
 .main_wrap {
     width: 80%;
     margin: 0 auto;
+}
+
+/* Navigation */
+
+nav {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}
+
+nav li {
+    padding: 1.5rem;
+}
+
+nav a:link, nav a:visited {
+    text-decoration: none;
+    font-size: 1.7rem;
+    font-weight: bold;
+    letter-spacing: 0.2rem;
+    color: var(--textAlt);
+    text-shadow: 0.1rem 0.1rem 0.5rem #191400;
+}
+
+nav a:hover, nav a:focus {
+    color: var(--textFocus);
+}
+
+nav a:active {
+    color: #fff;
+}
+
+.nav_btn {
+    display: none;
+}
+
+.nav_icon {
+    width: 3.5rem;
+    border-radius: 0.5rem;
 }
 
 /* Headings */
@@ -37,6 +91,28 @@
 /* Smaller Screens */
 
 @media screen and (max-width: 760px) {
+
+    nav {
+        display: none;
+    }
+
+    nav.show {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav_btn {
+        display: block;
+        padding: 0.5rem;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        max-width: 5%;
+    }
 
     .main_heading {
         font-size: 2.1rem;
