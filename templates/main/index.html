@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>This is the home page.</p>
-</body>
-</html>
+{% extends 'main/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block heading_class %}main_heading{% endblock %}
+{% block heading %}Best Restaurant{% endblock %}
+
+{% block content %}
+    <p>Home Page...</p>
+{% endblock %}
