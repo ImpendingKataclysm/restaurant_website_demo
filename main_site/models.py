@@ -58,7 +58,7 @@ class MenuItem(models.Model):
 
     is_available = models.BooleanField(default=True)
     date_added = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='media', blank=True, null=True)
+    image = models.ImageField(upload_to='main_site', blank=True, null=True)
 
     def __str__(self):
         return self.name

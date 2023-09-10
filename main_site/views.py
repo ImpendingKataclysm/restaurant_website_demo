@@ -35,5 +35,13 @@ class MenuView(generic.ListView):
         return context
 
 
+class MenuItemDetailView(generic.DetailView):
+    """
+    Display the details of the specified menu item
+    """
+    model = models.MenuItem
+    template_name = 'main/menu_item_detail.html'
+
+
 class ReserveView(generic.TemplateView):
     template_name = 'main/reserve.html'

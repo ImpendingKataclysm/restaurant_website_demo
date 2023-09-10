@@ -20,7 +20,9 @@
                                     {% if not row.is_available %}
                                         <del>{{ row.name }}</del>
                                     {% else %}
-                                        <a href="#">{{ row.name }}</a>
+                                        <a href="{% url 'main_site:menu_item' row.id %}">
+                                            {{ row.name }}
+                                        </a>
                                     {% endif %}
                                 </dt>
                                 <dd>{{ row.description }}</dd>
