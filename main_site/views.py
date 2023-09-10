@@ -17,8 +17,13 @@ class AboutView(generic.TemplateView):
     template_name = 'main/about.html'
 
 
-class ContactView(generic.TemplateView):
+class LocationView(generic.ListView):
+    """
+    Display contact information for each restaurant location registered in the
+    database.
+    """
     template_name = 'main/contact.html'
+    queryset = models.Location.objects.order_by('city')
 
 
 class MenuView(generic.ListView):

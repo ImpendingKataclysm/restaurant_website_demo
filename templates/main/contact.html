@@ -1,5 +1,25 @@
 {% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}Locations{% endblock %}
+
+{% block page_class %}contact{% endblock %}
+
+{% block heading_class %}page_heading{% endblock %}
+{% block heading %}Locations{% endblock %}
 
 {% block content %}
-    <p>Contact...</p>
+    <dl class="location_display">
+        {% for row in object_list %}
+            <div class="location_card">
+                <img src="{{ row.image.url }}" alt="location image" />
+                <div>
+                    <dt>{{ row.city }}</dt>
+                    <dd>{{ row.street_address }}</dd>
+                    <dd>{{ row.postal }}</dd>
+                    <dd>{{ row.phone }}</dd>
+                </div>
+            </div>
+        {% endfor %}
+    </dl>
 {% endblock %}

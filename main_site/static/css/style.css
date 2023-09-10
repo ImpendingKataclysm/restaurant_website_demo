@@ -147,7 +147,8 @@ nav a:active {
 .home:before,
 .about:before,
 .menu:before,
-.menu_detail:before {
+.menu_detail:before,
+.contact:before {
     content: '';
     display: block;
     position: fixed;
@@ -175,6 +176,11 @@ nav a:active {
 
 .menu_detail:before {
     background: url("../images/oil_bg.jpg") no-repeat;
+    background-size: cover;
+}
+
+.contact:before {
+    background: url("../images/rest_seating.jpg") no-repeat;
     background-size: cover;
 }
 
@@ -223,7 +229,7 @@ nav a:active {
     color: var(--textFocus);
 }
 
-.menu_card, .menu_item {
+.menu_card, .menu_item, .location_card {
     color: var(--textAlt);
     border-radius: 1.2rem;
     margin: 1.1rem auto;
@@ -245,10 +251,37 @@ nav a:active {
     font-size: 2.2rem;
 }
 
-.menu_image img {
+.menu_image img, .location_card img {
     width: 100%;
     border-radius: 1.1rem;
     box-shadow: 0.2rem 0.2rem 1.5rem #000;
+}
+
+.location_display {
+    display: flex;
+    margin: 1.1rem auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.location_display {
+    background-color: var(--primaryDark);
+    border-radius: 2.5rem;
+}
+
+.location_card {
+    letter-spacing: 0.1rem;
+    text-align: center;
+    margin: 1.1rem;
+}
+
+.location_card dt {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.location_card figure {
+    max-width: 50rem;
 }
 
 /* Footer */
@@ -351,5 +384,9 @@ nav a:active {
 
     .menu_image {
         margin: 0.5rem;
+    }
+
+    .location_display {
+        flex-direction: column;
     }
 }
