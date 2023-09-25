@@ -1,5 +1,6 @@
 {% extends 'main/base.html' %}
 {% load static %}
+{% load custom_filters %}
 
 {% block title %}Locations{% endblock %}
 
@@ -17,7 +18,7 @@
                     <dt>{{ row.city }}</dt>
                     <dd>{{ row.street_address }}</dd>
                     <dd>{{ row.postal }}</dd>
-                    <dd>{{ row.phone }}</dd>
+                    <dd>{{ row.phone|format_phone_number }}</dd>
                 </div>
             </div>
         {% endfor %}
