@@ -6,16 +6,21 @@
 {% block page_class %}menu_detail{% endblock %}
 
 {% block heading_class %}page_heading{% endblock %}
+
 {% block heading %}{{ object.name }}{% endblock %}
 
 {% block content %}
-    <div class="menu_item">
+    <div class="menu_item rounded my-1 mx-auto p-3">
         <div class="menu_description">
             <p>{{ object.description}}</p>
             <p>{{ object.price }}</p>
         </div>
         <figure class="menu_image">
-            <img src="{{ object.image.url }}" alt="{{ object.name }}" />
+            <img
+                src="{{ object.image.url }}"
+                alt="{{ object.name }}"
+                class="w-100 rounded shadow"
+            />
         </figure>
     </div>
 {% endblock %}

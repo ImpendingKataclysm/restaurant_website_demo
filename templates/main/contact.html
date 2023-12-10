@@ -2,18 +2,23 @@
 {% load static %}
 {% load custom_filters %}
 
-{% block title %}Locations{% endblock %}
+{% block title %}Contact{% endblock %}
 
 {% block page_class %}contact{% endblock %}
 
 {% block heading_class %}page_heading{% endblock %}
+
 {% block heading %}Locations{% endblock %}
 
 {% block content %}
-    <dl class="location_display">
+    <dl class="location_display rounded d-flex my-2 mx-auto justify-content-between align-items-center">
         {% for row in object_list %}
-            <div class="location_card">
-                <img src="{{ row.image.url }}" alt="location image" />
+            <div class="location_card rounded my-1 mx-auto p-3 text-center">
+                <img
+                    src="{{ row.image.url }}"
+                    alt="location image"
+                    class="w-100 rounded shadow"
+                />
                 <div>
                     <dt>{{ row.city }}</dt>
                     <dd>{{ row.street_address }}</dd>

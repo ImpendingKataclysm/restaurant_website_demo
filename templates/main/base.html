@@ -1,53 +1,82 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100 m-0 p-0">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Restaurant - {% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
-<body>
-
-    <div class="page_wrap {% block page_class %}{% endblock %}">
-        <div class="page_content">
+<body class="h-100 m-0 p-0">
+    <div class="page_wrap h-100 m-0 p-0 {% block page_class %}{% endblock %}">
+        <div class="position-relative d-flex flex-column justify-content-between">
             <div id="nav_btn" class="nav_btn" tabindex="0">
-                <img class="nav_icon" src="{% static 'images/nav_icon.png' %}" alt="nav menu icon" />
+                <img
+                    class="nav_icon rounded"
+                    src="{% static 'images/nav_icon.png' %}"
+                    alt="nav menu icon"
+                />
             </div>
-            <nav id="site_nav">
-                <ul>
-                    <li><a href="{% url 'main_site:home' %}">Home</a></li>
-                    <li><a href="{% url 'main_site:about' %}">About</a></li>
-                    <li><a href="{% url 'main_site:menu' %}">Menu</a></li>
-                    <li><a href="{% url 'main_site:contact' %}">Locations</a></li>
-                    <li><a href="{% url 'main_site:reserve' %}">Reservations</a></li>
+            <nav id="site_nav" class="position-sticky sticky-top bg-dark bg-opacity-50">
+                <ul class="m-0 p-0 d-md-flex justify-content-around list-unstyled">
+                    <li class="px-0 py-3">
+                        <a
+                            class="text-decoration-none fw-bold"
+                            href="{% url 'main_site:home' %}"
+                        >Home</a>
+                    </li>
+                    <li class="px-0 py-3">
+                        <a
+                            class="text-decoration-none fw-bold"
+                            href="{% url 'main_site:about' %}"
+                        >About</a>
+                    </li>
+                    <li class="px-0 py-3">
+                        <a
+                            class="text-decoration-none fw-bold"
+                            href="{% url 'main_site:menu' %}"
+                        >Menu</a>
+                    </li>
+                    <li class="px-0 py-3">
+                        <a
+                            class="text-decoration-none fw-bold"
+                            href="{% url 'main_site:contact' %}"
+                        >Locations</a>
+                    </li>
+                    <li class="px-0 py-3">
+                        <a
+                            class="text-decoration-none fw-bold"
+                            href="{% url 'main_site:reserve' %}"
+                        >Reserve</a>
+                    </li>
                 </ul>
             </nav>
-
             <main>
                 {% include 'main/partials/messages.html' %}
-                <div class="main_wrap">
-                    <header class="{% block heading_class %}{% endblock %}">
-                        <h1>{% block heading %}{% endblock %}</h1>
+                <div class="container mx-auto">
+                    <header class="mb-5 text-center {% block heading_class %}{% endblock %}">
+                        <h1 class="p-2 d-inline shadow rounded bg-dark bg-opacity-25 fw-bold fst-italic">
+                            {% block heading %}{% endblock %}
+                        </h1>
                     </header>
-
                     {% block content %}{% endblock %}
                 </div>
             </main>
+            <footer>
+                <p class="icon_credit">
+                    <a target="_blank" href="https://icons8.com/icon/82749/menu">
+                        Menu
+                    </a> icon by
+                    <a target="_blank" href="https://icons8.com">
+                        Icons8
+                    </a>
+                </p>
+            </footer>
         </div>
-
-        <footer>
-            <div class="icon_credit">
-                <a target="_blank" href="https://icons8.com/icon/82749/menu">
-                    Menu
-                </a> icon by
-                <a target="_blank" href="https://icons8.com">
-                    Icons8
-                </a>
-            </div>
-        </footer>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>

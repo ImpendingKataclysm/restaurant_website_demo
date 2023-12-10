@@ -2,20 +2,19 @@
 
 {% block title %}About{% endblock %}
 
-{% block page_class %}about{% endblock %}
+{% block page_class %}about position-relative vh-100{% endblock %}
 
 {% block heading_class %}page_heading{% endblock %}
+
 {% block heading %}About Us{% endblock %}
 
 {% block content %}
-    <section class="text_block">
+    <section class="bgDark p-3 rounded w-75 my-2 mx-auto">
         <h2>Our Mission</h2>
         <p>{% lorem %}</p>
-        <p>{% lorem %}</p>
     </section>
-    <section class="text_block">
+    <section class="bgDark p-3 rounded w-75 my-2 mx-auto">
         <h2>Our History</h2>
-        <p>{% lorem %}</p>
         <p>{% lorem %}</p>
     </section>
 {% endblock %}

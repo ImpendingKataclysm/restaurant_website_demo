@@ -11,12 +11,16 @@ class ReservationForm(forms.ModelForm):
         required=True,
         widget=forms.TextInput(attrs={
             'placeholder': 'Enter the name of your party',
-        }),
+            'class': 'form-control',
+        })
     )
 
     party_size = forms.IntegerField(
         max_value=100,
         required=True,
+        widget=forms.NumberInput(attrs={
+            'class': 'form-control',
+        })
     )
 
     phone = forms.CharField(
@@ -24,13 +28,15 @@ class ReservationForm(forms.ModelForm):
         required=True,
         widget=forms.TextInput(attrs={
             'placeholder': 'Your phone number',
-        }),
+            'class': 'form-control',
+        })
     )
 
     email = forms.EmailField(
         required=True,
         widget=forms.EmailInput(attrs={
             'placeholder': 'Your email address',
+            'class': 'form-control',
         }),
     )
 
@@ -43,12 +49,14 @@ class ReservationForm(forms.ModelForm):
     date = forms.DateField(
         widget=forms.DateInput(attrs={
             'type': 'date',
+            'class': 'form-control',
         }),
     )
 
     time = forms.TimeField(
         widget=forms.TimeInput(attrs={
             'type': 'time',
+            'class': 'form-control',
         }),
     )
 

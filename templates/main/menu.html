@@ -2,27 +2,29 @@
 
 {% block title %}Menu{% endblock %}
 
-{% block page_class %}menu{% endblock %}
+{% block page_class %}menu position-relative vh-100{% endblock %}
 
 {% block heading_class %}page_heading{% endblock %}
+
 {% block heading %}Menu{% endblock %}
 
 {% block content %}
     <ul>
         {% for type in types %}
-            <li class="menu_card">
+            <li class="menu_card list-unstyled text-center rounded my-1 mx-auto p-1">
                 <h2>{{ type.1 }}</h2>
                 <dl>
                     {% for row in object_list %}
                         {% if row.type == type.0 %}
-                            <div class="menu_card_item">
+                            <div class="menu_card_item my-2 mx-auto">
                                 <dt>
                                     {% if not row.is_available %}
                                         <del>{{ row.name }}</del>
                                     {% else %}
-                                        <a href="{% url 'main_site:menu_item' row.id %}">
-                                            {{ row.name }}
-                                        </a>
+                                        <a
+                                            href="{% url 'main_site:menu_item' row.id %}"
+                                            class="text-decoration-none"
+                                        >{{ row.name }}</a>
                                     {% endif %}
                                 </dt>
                                 <dd>{{ row.description }}</dd>

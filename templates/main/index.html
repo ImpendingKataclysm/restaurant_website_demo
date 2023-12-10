@@ -1,16 +1,33 @@
 {% extends 'main/base.html' %}
+{% load static %}
 
 {% block title %}Home{% endblock %}
 
-{% block page_class %}home{% endblock %}
+{% block page_class %}home position-relative vh-100{% endblock %}
 
 {% block heading_class %}main_heading{% endblock %}
+
 {% block heading %}Best Restaurant{% endblock %}
 
 {% block content %}
-    <ul class="home_menu">
-        <li><a href="{% url 'main_site:menu' %}">View Menu</a></li>
-        <li><a href="{% url 'main_site:contact' %}">Find Location</a></li>
-        <li><a href="{% url 'main_site:reserve' %}">Book Your Visit</a></li>
+    <ul class="home_menu text-center list-unstyled d-flex justify-content-around mb-2">
+        <li>
+            <a
+                class="rounded-pill text-decoration-none fw-bold p-3 bgDark"
+                href="{% url 'main_site:menu' %}"
+            >View Menu</a>
+        </li>
+        <li>
+            <a
+                class="rounded-pill text-decoration-none fw-bold p-3 bgDark"
+                href="{% url 'main_site:contact' %}"
+            >Find Location</a>
+        </li>
+        <li>
+            <a
+                class="rounded-pill text-decoration-none fw-bold p-3 bgDark"
+                href="{% url 'main_site:reserve' %}"
+            >Book Your Visit</a>
+        </li>
     </ul>
 {% endblock %}

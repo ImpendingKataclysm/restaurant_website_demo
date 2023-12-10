@@ -10,24 +10,16 @@
     --primaryDark: rgba(25, 20, 0, 0.8);
     --textFocus: #74bb83;
     --textAlt: #f7eabb;
+    --textShadow:  #191400;
 }
 
 /* General Styles */
-
-html, body, .page_wrap {
-    height: 100%;
-}
-
-html, body, ul, .page_wrap {
-    margin: 0;
-    padding: 0;
-}
 
 body {
     font-family: 'Quesha', sans-serif;
 }
 
-h2, p {
+h2, p, .bgDark {
     color: var(--textLight);
 }
 
@@ -35,17 +27,14 @@ h2 {
     font-size: 2.3rem;
 }
 
-p, dt, label {
+dt {
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+}
+
+p, label, a, li, dd {
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
-}
-
-li, dd {
-    font-size: 1.6rem;
-}
-
-dd {
-    margin-inline-start: 0;
 }
 
 .page_wrap {
@@ -53,50 +42,20 @@ dd {
     grid-template-rows: 1fr auto;
 }
 
-.page_content {
-    position: relative;
-}
-
-.main_wrap {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.text_block {
+.bgDark {
     background-color: var(--bgDark);
-    padding: 2.5rem;
-    width: 70%;
-    margin: 0.7rem auto;
-    text-shadow: 0.2rem 0.2rem 1rem var(--textDark);
-    border-radius: 2rem;
+    text-shadow: 0.2rem 0.2rem 1rem var(--textShadow);
+}
+
+.icon_credit {
+    display: none;
 }
 
 /* Navigation */
 
-nav {
-    background-color: rgba(0, 0, 0, 0.3);
-    position: sticky;
-    top: 0;
-    left: 0;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-around;
-    list-style-type: none;
-}
-
-nav li {
-    padding: 1.5rem;
-}
-
 nav a:link, nav a:visited {
-    text-decoration: none;
-    font-size: 1.7rem;
-    font-weight: bold;
-    letter-spacing: 0.2rem;
     color: var(--textAlt);
-    text-shadow: 0.1rem 0.1rem 0.5rem #191400;
+    text-shadow: 0.1rem 0.1rem 0.5rem var(--textShadow);
 }
 
 nav a:hover, nav a:focus {
@@ -113,36 +72,18 @@ nav a:active {
 
 .nav_icon {
     width: 3.5rem;
-    border-radius: 0.5rem;
 }
 
 /* Headings */
 
-.main_heading {
+.main_heading h1, .page_heading h1 {
     color: #b2f4c2;
-    font-size: 4rem;
+    font-size: 6rem;
     letter-spacing: 0.2rem;
-    text-shadow: 0.1rem 0.1rem 1.9rem #030b00;
+    text-shadow: 0.1rem 0.1rem 2rem var(--textShadow);
 }
 
-.main_heading, .page_heading {
-    font-style: italic;
-    font-weight: bold;
-    text-align: center;
-}
-
-.page_heading {
-    font-size: 3rem;
-    color: #c2fba7;
-    text-shadow: -0.6rem 0.6rem 1.9rem #000;
-}
-
-/* Page Styles */
-
-.home, .about, .menu {
-    height: 100vh;
-    position: relative;
-}
+/* Page Backgrounds */
 
 .home:before,
 .about:before,
@@ -190,63 +131,41 @@ nav a:active {
     background-size: cover;
 }
 
-.home_menu {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 2.5rem;
-}
+/* Home Page */
 
 .home_menu a:link, .home_menu a:visited {
-    text-decoration: none;
     font-size: 2.5rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
-    color: var(--textLight);
-    background-color: var(--bgDark);
-    padding: 1.5rem;
-    border-radius: 2.5rem;
 }
 
 .home_menu a:hover, .home_menu a:focus {
     background-color: rgba(1, 13, 6, 0.7);
-    color: #579d65;
+    color: var(--textFocus);
 }
 
-.home_menu a:active {
-    color: var(--bgDark);
-    background-color: var(--textLight);
-}
+/* Menu Page */
 
 .menu_card {
-    list-style-type: none;
     background-color: var(--primaryDark);
     width: 40%;
-    text-align: center;
 }
 
 .menu_card a:link, .menu_card a:visited,
+.location_card a:link, .location_card a:visited,
 .form_card a:link, .form_card a:visited {
-    text-decoration: none;
-    font-weight: bold;
     color: var(--textLight);
 }
 
 .menu_card a:hover, .menu_card a:focus,
+.location_card a:hover, .location_card a:focus,
 .form_card a:hover, .form_card a:focus {
     color: var(--textFocus);
 }
 
 .menu_card, .menu_item, .location_card, .form_card {
     color: var(--textAlt);
-    border-radius: 1.2rem;
-    margin: 1.1rem auto;
-    padding: 1.1rem;
 }
 
-.menu_card_item, .form_input {
-    margin: 1.5rem auto;
-}
+/* Menu Item Detail  */
 
 .menu_item {
     background-color: var(--bgDark);
@@ -259,32 +178,13 @@ nav a:active {
     font-size: 2.2rem;
 }
 
-.menu_image img, .location_card img {
-    width: 100%;
-    border-radius: 1.1rem;
-    box-shadow: 0.2rem 0.2rem 1.5rem #000;
-}
-
-.location_display {
-    display: flex;
-    margin: 1.1rem auto;
-    justify-content: space-between;
-    align-items: center;
-}
+/* Contact Page */
 
 .location_display, .form_card {
     background-color: var(--primaryDark);
-    border-radius: 2.5rem;
-}
-
-.location_card {
-    letter-spacing: 0.1rem;
-    text-align: center;
-    margin: 1.1rem;
 }
 
 .location_card dt {
-    font-weight: bold;
     font-size: 2rem;
 }
 
@@ -292,25 +192,15 @@ nav a:active {
     max-width: 50rem;
 }
 
+/* Reservation Page */
+
 .form_card {
     width: 45%;
-    margin: auto;
-}
-
-.form_input {
-    padding: 0.2rem;
 }
 
 .submit_btn input {
     font-family: 'Quesha', sans-serif;
     font-size: 1.8rem;
-    border: none;
-    border-radius: 1.9rem;
-    padding: 1.2rem;
-    font-weight: bold;
-    letter-spacing: 0.1rem;
-    color: var(--textLight);
-    background-color: var(--bgDark);
 }
 
 .submit_btn input:hover, .submit_btn input:focus {
@@ -318,21 +208,15 @@ nav a:active {
     color: var(--bgDark);
 }
 
-.submit input:active {
+.submit_btn input:active {
     color: var(--textFocus);
     background-color: var(--primaryDark);
-}
-
-/* Footer */
-
-.icon_credit {
-    display: none;
 }
 
 /* Smaller Screens */
 
 @media screen and (max-width: 1160px) {
-    .text_block, .menu_card, .menu_item, .form_card {
+    .bgDark, .menu_card, .menu_item, .form_card {
         width: 90%;
         padding: 1.2rem;
     }
@@ -399,7 +283,6 @@ nav a:active {
     .menu_detail:before {
         background: url("../images/mobile_bg3.jpg") center no-repeat;
         background-size: cover;
-
     }
 
     .reserve:before {
@@ -409,7 +292,6 @@ nav a:active {
 
     .home_menu {
         flex-direction: column;
-        text-align: center;
         gap: 2.2rem;
     }
 
@@ -432,10 +314,5 @@ nav a:active {
 
     .location_display {
         flex-direction: column;
-    }
-
-    .submit_btn input {
-        padding: 0.5rem;
-        font-size: 1.5rem;
     }
 }
